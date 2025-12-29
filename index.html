@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Червяк с яблоками и препятствиями</title>
+<style>
+body { margin:0; overflow:hidden; background:#222; }
+canvas { display:block; }
+#ui {
+    position:absolute; top:10px; left:10px; color:white; font-family:sans-serif;
+}
+#score { font-size:20px; margin-bottom:5px; }
+#speedLabel { margin-top:5px; display:block; }
+</style>
+</head>
+<body>
+<div id="ui">
+    <div id="score">Score: 0</div>
+    <label id="speedLabel">Speed: 2.5</label>
+    <input id="speedSlider" type="range" min="0" max="200" value="25">
+    <button id="normalSpeedBtn">Нормальная скорость</button>
+    <br>
+    <label for="appleCount">Яблок на поле:</label>
+    <input type="number" id="appleCount" min="1" max="50" value="200" style="width:50px">
+    <br>
+    <label for="obstacleCount">Количество препятствий:</label>
+    <input type="number" id="obstacleCount" min="0" max="50" value="15" style="width:50px">
+    <label for="musicVolume">Громкость музыки:</label>
+    <input type="range" id="musicVolume" min="0" max="100" value="50">
+</div>
+<canvas id="glcanvas"></canvas>
+<script src="shader.js"></script>
+<script src="snake_ai_avoid.js"></script>
+</body>
+</html>
